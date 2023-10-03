@@ -1,0 +1,16 @@
+Testing with EJS
+<%
+    console.log("This is being output by the template inside a scriptlet tag")
+    console.log("We are trimming the whitespace created by this tag with the tag at the end of the scriptlet")
+    var fruits = ["Apple", "Pear", "Orange", "Lemon"], random =
+        " ".repeat(198).split("").map(x => Math.random());
+_%>
+These are being output by two tags, a scriptlet tag for the for loop and a escape output tag for fruits[i]:
+<% for(var i = 0; i < fruits.length; ++i) { %>
+    <%=fruits[i]%>s<% } %>
+
+<%- fruits %> <%# this is a comment, and the tag on the left is an EJS tag that outputs an unescaped value. -%>
+
+<%% this is a litteral output %%>
+
+
